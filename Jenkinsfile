@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Build') {		
 				steps {
-					bat "\"${tool 'MSBuild'}\" -t:restore Teste.Jenkins.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot"
+					bat "\"${tool 'MSBuild'}\" Teste.Jenkins.sln /t:restore /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot"
 				}
 		}
 	}
